@@ -1,0 +1,149 @@
+
+/* 3D Bot Animation Styles */
+.bot-animation {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: float 3s ease-in-out infinite;
+}
+
+.bot-face {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  border-radius: 60% 60% 50% 50%;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.bot-eyes {
+  display: flex;
+  justify-content: space-between;
+  width: 70px;
+  margin-top: 10px;
+}
+
+.bot-eyes::before,
+.bot-eyes::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  animation: blink 4s infinite;
+}
+
+.bot-mouth {
+  width: 40px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.bot-mouth.smiling {
+  width: 40px;
+  height: 15px;
+  border-radius: 0 0 20px 20px;
+  border-top: none;
+  animation: smile 3s infinite;
+}
+
+.bot-mouth.listening {
+  animation: listen 1.5s infinite;
+}
+
+.bot-mouth.talking {
+  animation: talk 0.8s infinite;
+}
+
+.bot-mouth.thinking {
+  animation: think 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes blink {
+  0%, 45%, 55%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes listen {
+  0%, 100% {
+    width: 40px;
+    height: 3px;
+  }
+  50% {
+    width: 30px;
+    height: 10px;
+  }
+}
+
+@keyframes talk {
+  0%, 100% {
+    height: 3px;
+    width: 40px;
+  }
+  50% {
+    height: 10px;
+    width: 30px;
+  }
+}
+
+@keyframes think {
+  0%, 100% {
+    width: 40px;
+    height: 3px;
+  }
+  25% {
+    width: 20px;
+    height: 3px;
+  }
+  50% {
+    width: 30px;
+    height: 3px;
+  }
+  75% {
+    width: 15px;
+    height: 3px;
+  }
+}
+
+@keyframes smile {
+  0%, 100% {
+    height: 15px;
+    border-radius: 0 0 20px 20px;
+  }
+  50% {
+    height: 12px;
+    border-radius: 0 0 25px 25px;
+  }
+}

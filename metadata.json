@@ -1,0 +1,7 @@
+{
+  "name": "MahmudGPT",
+  "description": "An advanced AI chatbot powered by Google Gemini, featuring voice interaction, image generation, and multi-language support.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
